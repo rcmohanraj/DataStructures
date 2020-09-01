@@ -1,4 +1,4 @@
-package com.rcmdev.algorithms.linkedlist;
+package com.rcmcode.algorithms.linkedlist;
 
 import java.util.Arrays;
 import java.util.LinkedList;

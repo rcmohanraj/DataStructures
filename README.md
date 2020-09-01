@@ -1,4 +1,6 @@
-###Big O
+## Implementing custom Data Structures using Java
+
+### Big O
 Measure the performance of an Algorithm. How much scalable is the algorithm when the input grows.
 
 #### O(1) => Runs in Constant Time
@@ -46,7 +48,7 @@ In the example of Linear Search where the searching an element from array from f
 #### O(2 ^ n) => Runs in Exponential Time  
 Its really opposite to Logarithmic growth. Logarithmic curve slows down as the input size grows where as exponential curve will increase more and more when in the input size increases. So Exponential is not easily scalable.
 
-#### Arrays
+### Arrays
 
 Implemented Custom Array with Dynamic Size (CustomDynamicArray.java)
 
@@ -72,7 +74,7 @@ public int indexof(int item) {
 1) Vector 		=> Grow by 100% of its original size during resize and synchronized  
 2) ArrayList	=> Grow by 50% of its original size during resize and not synchronized  
 ---------------------------------------------------------------------------------------------
-#### Linked Lists
+### Linked Lists
 Store list of objects in sequence. It can grow and shrink automatically. Consist of group nodes in sequence. 
 Each node holds two data. (Each node holds reference to the next node)
 1) Value  
@@ -101,4 +103,21 @@ Implemented solution for these two problems.
 1) Reversing the Linked List  
 2) Get Kth node from end in one pass. (One pass means we shouldn't traverse the list again)  
 ---------------------------------------------------------------------------------------------
-#### Stacks
+### Stacks Last In First Out (LIFO)
+Its not meant for lookup function as like Arrays and Lists. It can be very useful in the case of Undo feature and back button logic of browser. Whenever we want to traverse from reverse we can implement to achieve that problem.  
+push 	=> Adds the item to the top									=> O(1) as its only adds item to top  
+pop 	=> Remove and return the item from top						=> O(1) as its only removes the top item  
+peek	=> Return the item from top (this will not remove the item) => O(1) as its only peeks the top item  
+isEmpty	=> Checks for empty											=> O(1) as its checks for empty  
+
+
+
+
+
+
+
+
+
+
+
+

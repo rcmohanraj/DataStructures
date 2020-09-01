@@ -1,6 +1,4 @@
-package com.rcmdev.algorithms;
-
-import java.util.Arrays;
+package com.rcmcode.algorithms;
 
 public class BigONotation {
 
