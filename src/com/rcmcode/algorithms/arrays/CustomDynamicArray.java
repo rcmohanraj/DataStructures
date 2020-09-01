@@ -1,4 +1,4 @@
-package com.rcmdev.algorithms.arrays;
+package com.rcmcode.algorithms.arrays;
 
 public class CustomDynamicArray {
 
