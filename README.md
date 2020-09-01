@@ -48,6 +48,8 @@ In the example of Linear Search where the searching an element from array from f
 #### O(2 ^ n) => Runs in Exponential Time  
 Its really opposite to Logarithmic growth. Logarithmic curve slows down as the input size grows where as exponential curve will increase more and more when in the input size increases. So Exponential is not easily scalable.
 
+---------------------------------------------------------------------------------------------
+
 ### Arrays
 
 Implemented Custom Array with Dynamic Size (CustomDynamicArray.java)
@@ -103,15 +105,26 @@ Implemented solution for these two problems.
 1) Reversing the Linked List  
 2) Get Kth node from end in one pass. (One pass means we shouldn't traverse the list again)  
 ---------------------------------------------------------------------------------------------
-### Stacks Last In First Out (LIFO)
-Its not meant for lookup function as like Arrays and Lists. It can be very useful in the case of Undo feature and back button logic of browser. Whenever we want to traverse from reverse we can implement to achieve that problem.  
+### Stack => Last In First Out Behavior (LIFO)
+Stacks are not meant for lookup or search functionality as like Arrays and Lists. It can be very useful in the case of implementing Undo feature and back button logic of browser. Whenever we want to do operation from reverse we can use Stack to achieve those problems.  
+
+##### Runtime Complexities of Stack
 push 	=> Adds the item to the top									=> O(1) as its only adds item to top  
 pop 	=> Remove and return the item from top						=> O(1) as its only removes the top item  
 peek	=> Return the item from top (this will not remove the item) => O(1) as its only peeks the top item  
 isEmpty	=> Checks for empty											=> O(1) as its checks for empty  
 
+##### Implemented the following problems:  
+1) String Reverse (StringReverser.java)
+2) Balanced Expression Verification (BalanceExpressionVerifier.java)
 
+Stack can be implemented using Array or Linked List.
 
+Finally created custom Stack using Array (CustomStack.java)
+
+---------------------------------------------------------------------------------------------
+
+### Queues:
 
 
 
