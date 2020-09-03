@@ -124,7 +124,33 @@ Finally created custom Stack using Array (CustomStack.java)
 
 ---------------------------------------------------------------------------------------------
 
-### Queues:
+### Queues => First In First Out Behavior (FIFO)
+#### Example of using Queue
+Printers
+Operating System use Queues to manage the processes
+Web server use Queues to manage incoming request
+
+##### Runtime Complexities of Queue
+enqueue		=> Adding item to the back of the queue.						=> O(1) as its only adds item to back  
+dequeue		=> Removing item from the front of the queue.                   => O(1) as its only removes the item from front  
+peeks		=> Getting item at the front of the queue without removing.     => O(1) as its only peeks the front item  
+isEmpty		=> Check whether the queue is empty                             => O(1) as its checks for empty  
+isFull		=> Check whether the queue is full                             	=> O(1) as its checks for full  
+
+Implemented Custom Queues using Array(CustomArrayQueue.java) and Stack (QueueWithTwoStacks.java)
+
+PriorityQueue => used to sort the items based on the priority.  
+
+Adding an item to the PriorityQueue is O(n) because we need to compare and shift the items.
+
+Implemented custom PriorityQueue class (CustomPriorityQueue.java)
+
+---------------------------------------------------------------------------------------------
+
+
+
+
+
 
 
 
