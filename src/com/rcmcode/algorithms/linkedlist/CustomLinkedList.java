@@ -110,9 +110,9 @@ public class CustomLinkedList {
 
     /*
     * Find the Kth node from the end in one pass
-    * if the one pass is not present we can simply traverse the list and
-    * find the size and then traverse the desired Kth node by traversing again
-    * One pass means we shouldn't traverse the list again.
+    * if the one pass is not present we can simply traversePreOrder the list and
+    * find the size and then traversePreOrder the desired Kth node by traversing again
+    * One pass means we shouldn't traversePreOrder the list again.
     * */
 
     public int getKthNodeFromTheEnd(int k) {
