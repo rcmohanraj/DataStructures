@@ -11,7 +11,7 @@ private static void print(int[] numbers) {
 }
 ```
 Regardless of the input array, fetching the value from specific index will always runs in constant time.
-__
+
 #### O(n) => Runs in Linear Time
 When an algorithm run time increases while the input size is increased. Cost the algorithm grows linearly and in direct relationship with size of the input.
 ```
@@ -50,6 +50,7 @@ Its really opposite to Logarithmic growth. Logarithmic curve slows down as the i
 
 ---------------------------------------------------------------------------------------------
 ## Linear Data Structures
+Line of items together in one after another formation.
 
 ### Arrays
 
@@ -151,7 +152,6 @@ Implemented custom PriorityQueue class (CustomPriorityQueue.java)
 
 Fast lookups
 #### Example of using Hash Table
-
 ##### Spell Checker 
 ##### Dictionaries
 ##### Compilers (quickly lookup the address of the functions and variables)
@@ -230,5 +230,110 @@ Implementing custom HashTable using LinkedList (CustomHashTable.java).
 ---------------------------------------------------------------------------------------------
 
 ## Non-Linear Data Structures
+
+### Trees
+Stores elements in hierarchy. 
+Elements are Nodes and Lines connecting them are Edges. Top node is called Root. Nodes which doesn't have any Children are called as Leaf.
+
+#### Example of using Tree
+##### Database (for storing indexed columns)
+##### Auto completion (used in Chrome while doing web search with past searches)
+##### Compilers (Syntax tree to parse expressions)
+##### Compression Algorithms (JPEG, MP3)
+
+#### Binary Tree
+Its a tree where a parent node will have left and right child. Not necessary to be in order. Also each node has up to two leaves
+
+#### Binary Search Tree
+It's a special form of Binary Tree with left and right child will be order against its root nodes. (left will be smaller and right will be higher)
+
+Binary search tree allows for quick lookup of data. Current node is always greater than left child and lesser than the right child. Also for the root node, all left sub tree nodes will be smaller and all the right sub tree nodes will be higher.
+
+##### Runtime Complexities of Binary Tree
+lookup			=> O(log n) because it will easily breakdown the tree into half by comparing the root node.
+insert			=> O(log n) because we can use lookup to find the correct place to insert and then we can establish the link  which is O(1). So we can consider as O(log n)
+delete			=> O(log n) similar to insert, after lookup we need to unlink the nodes
+
+Implemented custom Binary Search Tree (CustomBinaryTree.java) with insert and find methods.
+
+#### Tree Traversal
+1) Breadth First(Level Order)	=> We visit all the nodes in the same level before visiting any other level.  
+2) Depth First  
+	i) Pre-Order	Root, Left, Right
+   ii) In-Order		Left, Root, Right	(this will give us the nodes in either ascending or descending order)
+  iii) Post-Order	Left, Right, Root	(this will be useful to start processing from leaf nodes to root node)
+  
+Implemented all the three Depth First Traversal's in CustomBinaryTree.java
+
+#### Depth
+Start from root node to count the edges till the child node. Depth of root node is 0.  
+
+#### Height
+Its opposite of depth. Starts from the leaf node till we reach the root node. Height of the leaf node is 0. For calculating root node height we need to calculate from the longest child of that root node.  
+##### Height of root node
+1+max(height(L), height(R))
+
+```
+public int height() {
+	return height(root);
+}
+
+private boolean isLeaf(Node node) {
+	return (node.left == null && node.right == null);
+}
+
+private int height(Node root) {
+	if(root == null) return -1;
+	if(isLeaf(root)) return 0;
+	return 1 + Math.max(height(root.left), height(root.right));
+}
+```
+
+For calculating height and minimum value we can use Post-Order traversal.
+
+#### Min
+```
+public int minimum() {
+	return min(root);
+}
+
+private boolean isLeaf(Node node) {
+	return (node.left == null && node.right == null);
+}
+
+private int min(Node root) {
+	if(root == null) return -1;
+	if(isLeaf(root)) return root.value;
+	int leftMin = min(root.left);
+	int rightMin = min(root.right);
+	return Math.min(Math.min(leftMin, rightMin), root.value);
+}
+```
+
+Complexity of above min method for Binary Tree is O(n) because we are traversing both left and right child.
+
+```
+//Complexity is O(log n) as we are traversing only left child
+public int minimumBinarySearchTree() {
+	if(root == null) throw new IllegalStateException();
+	Node current = root;
+	Node last = current;
+	while(current != null) {
+		last = current;
+		current = current.left;
+	}
+	return last.value;
+}
+```
+Complexity of above minimumBinarySearchTree method for Binary Search Tree is O(log n) because we are traversing only left child.
+
+##### Implemented the following solutions
+1) equals method to compare two trees  
+2) checking the given tree is binary search tree  
+3) display the nodes at given distance  
+4) traverse tree using level order or breadth first algorithm  
+
+---------------------------------------------------------------------------------------------
+
 
 
