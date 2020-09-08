@@ -60,6 +60,12 @@ public class CustomeBinaryTree {
         System.out.println("Post-Order Ends");
     }
 
+    public void swapRoot() {
+        Node left = root.left;
+        root.left = root.right;
+        root.right = left;
+    }
+
     public int height() {
         return height(root);
     }
@@ -78,6 +84,61 @@ public class CustomeBinaryTree {
             current = current.left;
         }
         return last.value;
+    }
+
+    public boolean equals(CustomeBinaryTree tree2) {
+        if(tree2 == null) return false;
+        return equals(root, tree2.root);
+    }
+
+    public boolean isBinarySearchTree() {
+        return validate(root, Integer.MIN_VALUE, Integer.MAX_VALUE);
+    }
+
+    public void nodesAtKdistance(int distance) {
+        findDistance(root, distance);
+    }
+
+    private void findDistance(Node root, int distance) {
+        //System.out.println("Root:"+root+"Distance:"+distance);
+        if(distance == 0 && root != null) {
+            //++distance;
+            System.out.println("Node Value:"+root.value);
+            return;
+        } else if(root == null) {
+//            throw new IllegalArgumentException();
+            return;
+        }
+        findDistance(root.left, distance - 1);
+        findDistance(root.right, distance - 1);
+    }
+
+    //Breadth First
+    public void traverseLevelOrder() {
+        for(int i = 0; i <= height(); i++) {
+            nodesAtKdistance(i);
+        }
+    }
+
+
+    private boolean validate(Node root, int min, int max) {
+       // System.out.println("Node value["+root+"] min["+min+"] max["+max+"]");
+        if(root == null) return true;
+
+        return (root.value > min && root.value < max) &&
+               validate(root.left, min, root.value-1) &&
+               validate(root.right, root.value+1, max);
+    }
+
+    private boolean equals(Node root1, Node root2) {
+        if(root1 == null && root2 == null) return true;
+
+        if(root1 != null && root2 != null) {
+            return root1.value == root2.value &&
+                    equals(root1.left, root2.left) &&
+                    equals(root1.right, root2.right);
+        }
+        return false;
     }
 
     private int height(Node root) {

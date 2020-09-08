@@ -245,7 +245,7 @@ Elements are Nodes and Lines connecting them are Edges. Top node is called Root.
 Its a tree where a parent node will have left and right child. Not necessary to be in order. Also each node has up to two leaves
 
 #### Binary Search Tree
-Its similar to Binary Tree with left and right child will be order against its root nodes.
+It's a special form of Binary Tree with left and right child will be order against its root nodes. (left will be smaller and right will be higher)
 
 Binary search tree allows for quick lookup of data. Current node is always greater than left child and lesser than the right child. Also for the root node, all left sub tree nodes will be smaller and all the right sub tree nodes will be higher.
 
@@ -326,6 +326,14 @@ public int minimumBinarySearchTree() {
 }
 ```
 Complexity of above minimumBinarySearchTree method for Binary Search Tree is O(log n) because we are traversing only left child.
+
+##### Implemented the following solutions
+1) equals method to compare two trees  
+2) checking the given tree is binary search tree  
+3) display the nodes at given distance  
+4) traverse tree using level order or breadth first algorithm  
+
+---------------------------------------------------------------------------------------------
 
 
 
