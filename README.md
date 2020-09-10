@@ -269,7 +269,7 @@ Implemented all the three Depth First Traversal's in CustomBinaryTree.java
 Start from root node to count the edges till the child node. Depth of root node is 0.  
 
 #### Height
-Its opposite of depth. Starts from the leaf node till we reach the root node. Height of the leaf node is 0. For calculating root node height we need to calculate from the longest child of that root node.  
+Its opposite of depth, starts from the leaf node till we reach the root node. Height of the leaf node is 0. For calculating root node height we need to calculate from the longest child of that root node.  
 ##### Height of root node
 1+max(height(L), height(R))
 
@@ -335,5 +335,37 @@ Complexity of above minimumBinarySearchTree method for Binary Search Tree is O(l
 
 ---------------------------------------------------------------------------------------------
 
+#### Balanced Tree
+In a balance height of the left and right subtree must be less than or equal to 1 (<=1). 
+
+#### Perfect Tree
+Every level has full of nodes except the last level.
+
+#### Right Skewed Tree
+Most of the nodes only will have the right child.
+
+#### Left Skewed Tree
+Most of the nodes only will have the left child.
+
+If we are adding sorted values to the Binary Search Tree then it will be go into Skewed either one side where the run time complexity will be O(n).
+
+#### Self Balanced Trees
+##### Red-black Trees
+##### B-trees
+##### Splay trees
+##### 2-3 trees
+##### AVL Trees (Adelson-Velsky and Landis)
 
 
+### AVL Trees
+It's a special type of Binary Search Tree that automatically rebalances itself whenever the item is added. (it has self balancing property)
+
+#### Rotations
+1) Left
+2) Right
+3) Left Right
+4) Right Left
+
+Implemented Custom AVL Tree with Rotate methods (CustomAVLTree.java)
+
+---------------------------------------------------------------------------------------------
