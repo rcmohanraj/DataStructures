@@ -41,7 +41,9 @@ private static void print(int[] numbers) {
 Even if we add another for loop below these, the algorithm cost will be like O(n + n*n). Here always the n2 will grows faster than n, so we can represent the complexity as O(n^2)
 
 #### O(log n) => Runs in Logarithmic Time 
-Here algorithm cost will slowdown at some point rather than going linear. 
+Here algorithm cost will slowdown at some point rather than going linear.   
+
+Logarithm is basically a function used to find its power. For example log<sub>2</sub> 8 = 3. Which means 2<sup>3</sup> = 8. 
 
 In the example of Linear Search where the searching an element from array from first index is O(1). But if the search element is present in the last index, then the algorithm will always takes O(n). Because when size of the array grows the cost will also increase. In the case of Binary Search the array will be divided into two parts and will divide further until the elements index found. Here cost will slowdown because the size of the array is divided in each steps. So Binary Search is faster than Linear Search.
 
